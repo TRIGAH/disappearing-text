@@ -13,7 +13,12 @@ class TypingApp:
         self.typing_thread = None
         self.last_typing_time = None
 
-        # self.start_typing_thread()
+        self.start_typing_thread()
+
+        def start_typing_thread(self):
+            self.typing_thread = threading.Thread(target=self.monitor_typing)
+            self.typing_thread.daemon = True
+            self.typing_thread.start()
 
 def main():
     root = tk.Tk()
