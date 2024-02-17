@@ -26,6 +26,12 @@ class TypingApp:
                 self.clear_text_entry()
             time.sleep(1)
 
+    def clear_text_entry(self):
+        self.text_entry.delete('1.0', tk.END)
+
+    def on_typing(self, event):
+        self.last_typing_time = time.time()
+
 def main():
     root = tk.Tk()
     app = TypingApp(root)
